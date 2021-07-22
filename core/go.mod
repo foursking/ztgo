@@ -2,6 +2,8 @@ module github.com/foursking/ztgo/core
 
 go 1.14
 
+replace google.golang.org/grpc => google.golang.org/grpc v1.26.0
+
 require (
 	github.com/foursking/ztgo v0.0.0-20210722081740-d081a7dcdade
 	github.com/gin-gonic/gin v1.7.2
