@@ -1,8 +1,8 @@
 package core
 
 import (
-	qdgrpc "git.code.oa.com/qdgo/core/net/grpc"
-	"git.code.oa.com/qdgo/core/stat"
+	qdgrpc "github.com/foursking/ztgo/net/grpc"
+	"github.com/foursking/ztgo/stat"
 
 	"github.com/micro/go-micro/v2/client"
 	"github.com/micro/go-micro/v2/client/grpc"

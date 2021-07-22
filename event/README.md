@@ -38,7 +38,7 @@ event.AllListeners() map[string][]Listener
 ## Demo
 
 ```go
-import "git.code.oa.com/qdgo/core/event"
+import "github.com/foursking/ztgo/event"
 
 event.On("user.created", func(v ...interface{}) {
     log.Infof("User '%s' was created", v[0].Username)

@@ -9,11 +9,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"git.code.oa.com/qdgo/core/config/env"
-	"git.code.oa.com/qdgo/core/log"
-	"git.code.oa.com/qdgo/core/net/ip"
-	"git.code.oa.com/qdgo/core/net/udp"
-	"git.code.oa.com/qdgo/core/store/oidb"
+	"github.com/foursking/ztgo/config/env"
+	"github.com/foursking/ztgo/log"
+	"github.com/foursking/ztgo/net/ip"
+	"github.com/foursking/ztgo/net/udp"
+	"github.com/foursking/ztgo/store/oidb"
 
 	"github.com/golang/protobuf/proto"
 	pkgerr "github.com/pkg/errors"

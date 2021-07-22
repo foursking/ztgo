@@ -5,10 +5,10 @@ import (
 	"os"
 	"strings"
 
-	"git.code.oa.com/qdgo/core/config/env"
-	"git.code.oa.com/qdgo/core/errs"
-	"git.code.oa.com/qdgo/core/log"
-	"git.code.oa.com/qdgo/core/stat/tracing"
+	"github.com/foursking/ztgo/config/env"
+	"github.com/foursking/ztgo/errs"
+	"github.com/foursking/ztgo/log"
+	"github.com/foursking/ztgo/stat/tracing"
 
 	"github.com/micro/go-micro/v2"
 	"github.com/micro/go-micro/v2/config"

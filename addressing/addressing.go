@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"git.code.oa.com/qdgo/core/event"
-	"git.code.oa.com/qdgo/core/log"
+	"github.com/foursking/ztgo/event"
+	"github.com/foursking/ztgo/log"
 )
 
 const (

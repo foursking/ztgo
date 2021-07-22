@@ -1,9 +1,9 @@
 package core
 
 import (
-	"git.code.oa.com/qdgo/core/config"
-	"git.code.oa.com/qdgo/core/config/env"
-	"git.code.oa.com/qdgo/core/log"
+	"github.com/foursking/ztgo/config"
+	"github.com/foursking/ztgo/config/env"
+	"github.com/foursking/ztgo/log"
 
 	"github.com/micro/cli/v2"
 	"github.com/micro/go-micro/v2/debug/profile/http"

@@ -4,10 +4,10 @@ import (
 	"context"
 	"os"
 
-	"git.code.oa.com/qdgo/core/log"
-	qdgrpc "git.code.oa.com/qdgo/core/net/grpc"
-	"git.code.oa.com/qdgo/core/net/ip"
-	"git.code.oa.com/qdgo/core/stat/metric"
+	"github.com/foursking/ztgo/log"
+	qdgrpc "github.com/foursking/ztgo/net/grpc"
+	"github.com/foursking/ztgo/net/ip"
+	"github.com/foursking/ztgo/stat/metric"
 
 	"github.com/micro/cli/v2"
 	"github.com/micro/go-micro/v2"

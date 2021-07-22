@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"git.code.oa.com/qdgo/core/config/env"
-	qdmd "git.code.oa.com/qdgo/core/metadata"
-	"git.code.oa.com/qdgo/core/stat/metric"
+	"github.com/foursking/ztgo/config/env"
+	qdmd "github.com/foursking/ztgo/metadata"
+	"github.com/foursking/ztgo/stat/metric"
 
 	"github.com/micro/go-micro/v2/client"
 	"github.com/micro/go-micro/v2/metadata"

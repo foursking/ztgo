@@ -1,4 +1,4 @@
-module 
+module github.com/foursking/ztgo
 
 go 1.14
 
