@@ -11,11 +11,11 @@ import (
 )
 
 var (
-	// DefaultClient is qdgo default client
+	// DefaultClient is ztgo default client
 	DefaultClient = NewClient()
 )
 
-// NewClient creates default qdgo client
+// NewClient creates default ztgo client
 func NewClient(opts ...client.Option) client.Client {
 	opts = append(opts,
 		client.Retries(0),

@@ -24,7 +24,7 @@ func init() {
 	}
 }
 
-// NewGrpcService creates qdgo grpc service
+// NewGrpcService creates ztgo grpc service
 func NewGrpcService(opts ...micro.Option) micro.Service {
 	srv := micro.NewService(
 		micro.Registry(RegistryOption()),
@@ -42,7 +42,7 @@ func NewGrpcService(opts ...micro.Option) micro.Service {
 	return srv
 }
 
-// NewWebService creates qdgo web service
+// NewWebService creates ztgo web service
 func NewWebService(opts ...web.Option) web.Service {
 	profile := http.NewProfile()
 	srv := web.NewService(
@@ -63,7 +63,7 @@ func NewWebService(opts ...web.Option) web.Service {
 	return srv
 }
 
-// NewUDPService creates qdgo udp service
+// NewUDPService creates ztgo udp service
 func NewUDPService(opts ...micro.Option) micro.Service {
 	srv := micro.NewService(
 		micro.Context(context.Background()),

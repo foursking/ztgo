@@ -12,28 +12,28 @@ import (
 var (
 	DefaultFlags = []cli.Flag{
 		&cli.StringFlag{
-			Name:        "qdgo_prometheus_addr",
-			EnvVars:     []string{"QDGO_PROMETHEUS_ADDR"},
+			Name:        "ztgo_prometheus_addr",
+			EnvVars:     []string{"ztgo_PROMETHEUS_ADDR"},
 			Value:       "0.0.0.0:8088",
 			Usage:       "prometheus address",
 			Destination: &env.PrometheusAddr,
 		},
 		&cli.StringFlag{
-			Name:    "qdgo_config_path",
-			EnvVars: []string{"QDGO_CONFIG_PATH"},
-			Usage:   "qdgo config file path or directory",
+			Name:    "ztgo_config_path",
+			EnvVars: []string{"ztgo_CONFIG_PATH"},
+			Usage:   "ztgo config file path or directory",
 		},
 		&cli.StringFlag{
-			Name:        "qdgo_deploy_env",
-			EnvVars:     []string{"QDGO_DEPLOY_ENV"},
+			Name:        "ztgo_deploy_env",
+			EnvVars:     []string{"ztgo_DEPLOY_ENV"},
 			Value:       env.DefaultDeployEnv,
 			Usage:       "deploy env",
 			Destination: &env.DeployEnv,
 		},
 		&cli.StringFlag{
-			Name:        "qdgo_pprof_addr",
+			Name:        "ztgo_pprof_addr",
 			Usage:       "pprof address",
-			EnvVars:     []string{"QDGO_PPROF_ADDR"},
+			EnvVars:     []string{"ztgo_PPROF_ADDR"},
 			Value:       http.DefaultAddress,
 			Destination: &http.DefaultAddress,
 		},
@@ -41,7 +41,7 @@ var (
 )
 
 func cliAction(ctx *cli.Context) (err error) {
-	if filepath := ctx.String("qdgo_config_path"); filepath != "" {
+	if filepath := ctx.String("ztgo_config_path"); filepath != "" {
 		if err = config.InitFileConfig(filepath); err != nil {
 			log.Fatalf("init file config(%s) error(%v)", filepath, err)
 		}

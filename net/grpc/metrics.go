@@ -16,7 +16,7 @@ import (
 
 var (
 	_metricServerReqDur = metric.NewHistogramVec(&metric.HistogramVecOpts{
-		Namespace: "qdgo",
+		Namespace: "ztgo",
 		Subsystem: "grpc",
 		Name:      "server_duration_ms",
 		Help:      "grpc server requests duration(ms).",
@@ -24,14 +24,14 @@ var (
 		Buckets:   []float64{5, 10, 25, 50, 100, 250, 500, 1000, 2500},
 	})
 	_metricServerReqCodeTotal = metric.NewCounterVec(&metric.CounterVecOpts{
-		Namespace: "qdgo",
+		Namespace: "ztgo",
 		Subsystem: "grpc",
 		Name:      "server_code_total",
 		Help:      "grpc server requests code count.",
 		Labels:    []string{"method", "caller", "code"},
 	})
 	_metricClientReqDur = metric.NewHistogramVec(&metric.HistogramVecOpts{
-		Namespace: "qdgo",
+		Namespace: "ztgo",
 		Subsystem: "grpc",
 		Name:      "client_duration_ms",
 		Help:      "grpc client requests duration(ms).",
@@ -39,7 +39,7 @@ var (
 		Buckets:   []float64{5, 10, 25, 50, 100, 250, 500, 1000, 2500},
 	})
 	_metricClientReqCodeTotal = metric.NewCounterVec(&metric.CounterVecOpts{
-		Namespace: "qdgo",
+		Namespace: "ztgo",
 		Subsystem: "grpc",
 		Name:      "client_code_total",
 		Help:      "grpc client requests code count.",
