@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package errs;
+
+option go_package = ".;errs";
+
+message Err {
+    int32 code = 1;
+    string message = 2;
+    map<string, string> details = 3;
+}

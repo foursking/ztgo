@@ -1,0 +1,51 @@
+package oidb_0x5eb;
+
+message ReqBody {
+    repeated uint64 rpt_uint64_uins = 1; // UIN列表，最大不能超过500个
+    optional uint32 uint32_max_package_size = 3; // 自定义分包大小，如果回包大小大于这个值，无法被处理的uin会带在包体中返回
+    repeated bytes rpt_bytes_openid = 4; // openid列表, openid列表和UIN列表2选1，最大不能超过500个
+    optional uint32 uint32_appid = 5; // 跟openid列表对应的appid，如果使用openid列表，必须提供appid
+
+    optional uint32 uint32_req_nick = 20002; // nick name
+    optional uint32 uint32_req_country = 20003; // country
+    optional uint32 uint32_req_province = 20004; // province
+    optional uint32 uint32_req_gender = 20009; // gender
+    optional uint32 uint32_req_allow = 20014; // allow
+    optional uint32 uint32_req_face_id = 20015; // 系统头像ID，业务不能直接使用，请找derekxywang获取头像URL
+    optional uint32 uint32_req_person = 20019; // 个人说明
+    optional uint32 uint32_req_city = 20020; // city
+    optional uint32 uint32_req_birthday = 20031; // birthday
+    optional uint32 uint32_req_city_id = 20032; // city_id
+    optional uint32 uint32_req_lang1 = 20033; // lang1
+    optional uint32 uint32_req_lang2 = 20034; // lang2
+    optional uint32 uint32_req_lang3 = 20035; // lang3
+    optional uint32 uint32_req_lflag = 21003; // lflag
+};
+
+
+message UdcUinData {
+    optional uint64 uint64_uin = 1; // uin
+    optional bytes bytes_openid = 4; // openid,请求包使用openid为key查询数据时这里只会返回openid,不会返回uin
+
+    optional bytes bytes_nick = 20002; // nick name
+    optional bytes bytes_country = 20003; // 国家名称
+    optional bytes bytes_province = 20004; // 省份名称
+    optional uint32 uint32_gender = 20009; // gender
+    optional uint32 uint32_allow = 20014; // 加好友验证方式 0--允许任何人 1--需要验证 2-不允许任何人 3-需要正确回答问题 4--需要回答问题并
+    optional uint32 uint32_face_id = 20015; // 系统头像ID，业务不能直接使用，请找derekxywang获取头像URL
+    optional bytes bytes_person = 20019; // 个人说明
+    optional bytes bytes_city = 20020; // 城市名称
+    optional bytes bytes_birthday = 20031; // birthday，byte0-byte1 年份(1800-2100，0表示未填）；byte2 月份(0-12)；byte3 日期(0-31)
+    optional bytes bytes_city_id = 20032; // 12字节，分别是 dwContryID - dwProvinceID - dwCityID，网络序
+    optional uint32 uint32_lang1 = 20033; // lang1
+    optional uint32 uint32_lang2 = 20034; // lang2
+    optional uint32 uint32_lang3 = 20035; // lang3
+    optional uint32 uint32_lflag = 21003; // lflag
+};
+
+message RspBody {
+    repeated UdcUinData rpt_msg_uin_data = 11; // uin data list
+    repeated uint64 rpt_uint64_unfinished_uins = 12; // 因为分包，未被处理的Uin列表
+};
+
+

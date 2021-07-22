@@ -1,0 +1,34 @@
+package oidb_0x4c8;
+
+message ReqUsrInfo
+{
+	required uint64 dstUin = 1;  //请求头像的号码
+	required uint32 timestamp = 2;   //时间戳, 如果头像没有时间戳，统一用0表示
+};
+
+message QQHeadUrlReq
+{
+	required uint32 srcUsrType = 1;  //拉取方的用户类型，1：个人uin；4：群uin；8：群号码
+	required uint64 srcUin = 2;   //拉取方的号码
+	required uint32 dstUsrType = 3;   //请求头像的用户类型，1：个人uin；4：群uin；8：群号码
+	repeated ReqUsrInfo dstUsrInfos = 4;   //请求头像的用户信息
+};
+
+message RspHeadInfo
+{
+	required uint64 dstUin = 1;   //请求头像的号码
+	required uint32 faceType = 2;   //1：自定义头像， 0：系统头像
+	required uint32 timestamp = 3;   //头像更新的时间戳，如果是系统头像则没有时间时间戳
+	required uint32 faceFlag = 4;   //该号码的头像标志位，说明用户有哪些规格的自定义头像  faceFlag如果为0表示只有40尺寸的头像规格 bit0为1，dst_uin拥有gif动态自定义头像  bit1，无意义，不需要判断  bit2为1，dst_uin拥有100*100自定义头像   bit3为1，dst_uin拥有140*140自定义头像  bit4为1，dst_uin拥有高清原图自定义头像  比如faceFlag==4 (比特位0100)，代表其有100*100规格头像
+	required string url = 5;   //头像URL，要加上规格参数(目前有40,100,140,640,0(原图)，具体要看faceFlag)
+	optional uint32 sysid = 6;  //系统头像ID
+};
+
+message QQHeadUrlRsp
+{
+	required uint32 srcUsrType = 1;  //拉取方的用户类型
+	required uint64 srcUin = 2;   //拉取方的uin
+	required int32 result = 3;    //拉取结果，0:成功，其他:失败
+	required uint32 dstUsrType = 4;   //请求头像的用户类型，1：个人uin；4：群uin；8：群号码
+	repeated RspHeadInfo dstHeadInfos = 5; 
+};

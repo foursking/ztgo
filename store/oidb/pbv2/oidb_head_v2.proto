@@ -1,0 +1,47 @@
+syntax = "proto2";
+
+package pbv2;
+
+message Oidb2ServerSsoInfo
+{
+    optional uint32 uint32_seq = 1;	//sso的seq
+    optional uint32 uint32_app_id = 2;	//appid, 由SSO的LC的前4位获取
+    optional bytes bytes_imei = 3;	//手机IMEI
+    optional bytes bytes_client_version = 4;	//客户端协议版本号(客户端上传, 兼容旧版本)
+    optional bytes bytes_sso_client_version = 5;	//客户端协议版本号(SSO添加, 使用这个字段)
+    optional uint32 uint32_sso_bid = 6;	//SSO包头的BID(即客户端带上来的AppId)
+    optional uint32 uint32_sso_client_version = 10;	//OIDB不填此字段的!!!! 后端业务可使用Agent将版本(A/I)XX.YY.ZZZZZ转换成数字的形式传给后续的业务做版本控制用.
+};
+
+message LoginSig
+{
+    optional uint32 uint32_type = 1;    //登录态类型
+    optional bytes bytes_sig = 2;       //登录态内容
+    optional uint32 uint32_appid = 3;   //第三方调用的appid
+};
+
+message OIDBHead
+{
+    optional uint64 uint64_uin = 1;             //QQ号码
+    optional uint32 uint32_command = 2;         //主命令号, 即协议号
+    optional uint32 uint32_service_type = 3;    //子命令号, 即在门户上申请的业务类型
+    optional uint32 uint32_seq = 4;             //序列值, 用于给请求方区分不同的请求回包
+    optional fixed32 uint32_client_addr = 5;    //客户端IP -- 发起请求的Uin的IP, 指触发请求的用户的外网IP, 网络序,  可以使用inet_addr()函数生成, struct in_addr格式
+    optional bytes   bytes_client_addr  = 15;   //客户端IP，ipv6存储格式，16个字节，如果是ipv4ip采用兼容ipv6方式存储。
+    optional fixed32 uint32_server_addr = 6;     //服务端IP -- 最前端与用户交互的服务器IP, 如果触发请求是通过Cs通道的, 则为Conn透传后的第一台服务器, 如果触发请求是通过Web, 则为Cgi所在的服务器. 网络序, 可以使用inet_addr()函数生成, struct in_addr格式
+    optional bytes  bytes_server_addr = 16;              //服务端IP，ipv6存储格式，16个字节，如果是ipv4ip采用兼容ipv6方式存储。
+    optional uint32 uint32_result = 7;          //返回值: 0--处理正确
+    optional string str_error_msg = 8;          //错误描述 -- 给返回值非0的描述
+    optional LoginSig msg_login_sig = 9;        //登录态, 指Server给用户派发的签名, 用于校验用户的合法性, 详细请见门户上的"开发指南"->"使用帮助"->"OIDB接口说明书"
+    optional string str_user_name = 10;         //申请权限时的用户名
+    optional string str_service_name = 11;      //申请权限时的业务名
+    optional uint32 uint32_flag = 12;           //标志(某些业务可能需要调用方填写标志, 如群)
+    optional uint32 uint32_from_addr = 13;      //发起请求的IP, 安全业务用, 网络序, struct in_addr格式
+    optional uint32 uint32_local_addr = 14;     //收到请求的IP, 安全业务用, 网络序, struct in_addr格式
+    optional uint32 uint32_moduleid = 17;       //模块id，使用模块鉴权时用到
+    optional bytes  reserved = 18;     //reserved
+    optional uint32 uint32_locale_id = 19;	//语言ID
+    optional Oidb2ServerSsoInfo msg_sso_info = 20;	//SSO相关信息
+    extensions 1000 to 1999;    //预留给业务自定义使用
+    optional bytes bytes_service_info = 2000;	//业务方自定义信息, 需要在协议说明页中说明该信息如何填写. 建议使用ProtoBuf定义后, 序列化进去
+};

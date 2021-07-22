@@ -1,0 +1,180 @@
+package oidb_0x88d; //所有字符串均为utf8格式
+
+message GroupHeadPortraitInfo
+{
+    optional uint32 rpt_uint32_pic_id	= 1;	// 必填字段，头像序号，即头像文件名的后缀
+}
+
+message GroupHeadPortrait
+{
+    optional uint32 uint32_pic_cnt		= 1;    // 必填字段，头像数量
+    repeated GroupHeadPortraitInfo rpt_msg_info	= 2;	// 必填字段，头像文件相关信息，个数必须等于uint32_pic_cnt
+    optional uint32 uint32_default_id	= 3;    // 必填字段，设置为群默认头像的头像id
+	optional uint32 uint32_verifying_pic_cnt    = 4; //可选字段，审核中的头像数量
+	repeated GroupHeadPortraitInfo rpt_msg_verifyingpic_info = 5;//可选字段，审核中的头像文件相关信息，个数必须等于uint32_verifying_pic_cnt
+}
+
+message GroupExInfoOnly //仅用于群扩展信息,目前在groupinfo中的群扩展信息与群信息相关联,这个结构体用于独立设置群扩展信息
+{
+    optional uint32 uint32_tribe_id = 1; //群部落ID信息
+	optional uint32 uint32_money_for_add_group   = 2; //付费入群的加群费用, 单位 分
+};
+
+message GroupInfo
+{
+    optional uint64 uint64_group_owner           = 1; //群主
+    optional uint32 uint32_group_create_time     = 2; //创建时间
+    optional uint32 uint32_group_flag            = 3; //群标志位, 详细说明见下文
+    optional uint32 uint32_group_flag_ext        = 4; //群的扩展标志位，详细说明见下文
+    optional uint32 uint32_group_member_max_num  = 5; //群成员上限
+    optional uint32 uint32_group_member_num      = 6; //当前群成员数 
+    optional uint32 uint32_group_option          = 7; //加群条件 1：直接加群（后台转为需要群主或管理员验证），2：群主或管理员验证，3：不允许加群，4：回答问题加群，5：回答问题且管理员审批加群。
+    optional uint32 uint32_group_class_ext       = 8; //群扩展分类
+    optional uint32 uint32_group_special_class   = 9; //特定业务需求群分类
+    optional uint32 uint32_group_level           = 10; //群等级数据
+    optional uint32 uint32_group_face            = 11; //群的头像
+    optional uint32 uint32_group_default_page    = 12; //群mini下的群应用页面中的默认页卡
+    optional uint32 uint32_group_info_seq        = 13; //群的当前资料的序列号
+    optional uint32 uint32_group_roaming_time    = 14; //漫游消息时间
+    optional bytes  string_group_name            = 15; //群名称
+    optional bytes  string_group_memo            = 16; //群公告
+    optional bytes  string_group_finger_memo     = 17; //群简介
+    optional bytes  string_group_class_text      = 18; //群文字分类
+    repeated uint32 uint32_group_alliance_code   = 19; //群联列表信息
+    optional uint32 uint32_group_extra_adm_num   = 20; //附加管理员数目
+    optional uint64 uint64_group_uin             = 21; //Group Code 转为Group Uin后的信息
+    optional uint32 uint32_group_cur_msg_seq     = 22; //群当前消息seq
+    optional uint32 uint32_group_last_msg_time   = 23; //当前群最后一条消息时间
+    optional bytes  string_group_question       = 24; //加群的问题
+    optional bytes  string_group_answer         = 25; //加群的答案
+    optional uint32 uint32_group_visitor_max_num = 26; //当前群最大游客数
+    optional uint32 uint32_group_visitor_cur_num = 27; //群当前游客数
+    optional uint32 uint32_level_name_seq        = 28; //群的当前资料的序列号
+    optional uint32 uint32_group_admin_max_num   = 29; //群管理员最大数
+
+    optional uint32 uint32_group_aio_skin_timestamp      = 30; // 群AIO 皮肤最后更新时间（！客户端请求时， 填上本地时间）
+    optional uint32 uint32_group_board_skin_timestamp     = 31; // 群公告栏 皮肤最后更新时间（！客户端请求时， 填上本地时间）
+    optional bytes  string_group_aio_skin_url            = 32; // 群AIO皮肤图片URL
+    optional bytes  string_group_board_skin_url          = 33; // 群公告栏皮肤图片URL
+
+    optional uint32 uint32_group_cover_skin_timestamp      = 34; // 群封面 皮肤最后更新时间（！客户端请求时， 填上本地时间）
+    optional bytes  string_group_cover_skin_url               = 35; // 群封面图片URL
+
+    optional uint32 uint32_group_grade			= 36;	//群活跃等级
+    optional uint32 uint32_active_member_num    = 37;   //群活跃人数
+    optional uint32 uint32_certification_type   = 38;   //认证群类型
+    optional bytes  string_certification_text   = 39;   //认证群文字
+    optional bytes  string_group_rich_finger_memo   = 40;   //群富文本简介
+    repeated TagRecord rpt_tag_record            = 41;   //群标签
+    optional GroupGeoInfo group_geo_info         = 42;   //群地理信息
+    optional uint32 uint32_head_portrait_seq     = 43;	// 群头像墙的序列号，上传/排序/删除/设置默认头像等修改操作成功后需要更新
+    optional GroupHeadPortrait msg_head_portrait = 44;	// 群头像墙
+
+    optional uint32 uint32_shutup_timestamp      = 45 ;  // 被禁言到期的绝对时间点，( 这里不同于设置的时候 )  秒数。
+    optional uint32 uint32_shutup_timestamp_me   = 46 ;  // 本人被禁言到期的绝对时间点，( 这里不同于设置的时候 )  秒数。
+    optional uint32 uint32_create_source_flag    = 47 ;  // 建群来源: 1-手Q附近的群创建
+
+    optional uint32 uint32_cmduin_msg_seq        = 48;   //成员本人下发消息seq, 仅对cmduin本人为群成员有效
+    optional uint32 uint32_cmduin_join_time      = 49;   //成员本人入群时间，   仅对cmduin本人为群成员有效
+    optional uint32 uint32_cmduin_uin_flag       = 50;   //成员本人Uin Flag，   仅对cmduin本人为群成员有效
+    optional uint32 uint32_cmduin_flag_ex        = 51;   //成员本人Flag Ex,     仅对cmduin本人为群成员有效
+    optional uint32 uint32_cmduin_new_mobile_flag = 52;   //成员本人手机消息标志 仅对cmduin本人为群成员有效
+    optional uint32 uint32_cmduin_read_msg_seq   = 53;   //成员本人已读seq，    仅对cmduin本人为群成员有效
+    optional uint32 uint32_cmduin_last_msg_time  = 54;   //成员本人最后发言时间 仅对cmduin本人为群成员有效
+    optional uint32 uint32_group_type_flag       = 55; //群类型： 0-兴趣群、1-私密群、2-同城群、3-同城群（审核中） 4-同城群(提交审核中)
+    optional uint32 uint32_app_privilege_flag    = 56; //详细说明见下文
+    optional GroupExInfoOnly st_group_ex_info    = 57; //群扩展信息
+    optional uint32 uint32_group_sec_level       = 58; //群信用等级
+    optional uint32 uint32_group_sec_level_info  = 59; //群信用等级详细信息
+    optional uint32 uint32_cmduin_privilege      = 60;   //成员本人身份 0 普通成员，1 群主，2 管理员
+
+    optional bytes  string_poid_info             = 61;   //返回热聊群的poi信息
+    optional uint32 uint32_cmduin_flag_ex2       = 62;   //成员本人Flag Ex2,    仅对cmduin本人为群成员有效 
+    optional uint64 uint64_conf_uin              = 63;   //讨论组转群，讨论组UIN
+    optional uint32 uint32_conf_max_msg_seq      = 64;   //讨论组转群时，讨论组的最大消息SEQ
+    optional uint32 uint32_conf_to_group_time    = 65;   //讨论组转群时，发生时间
+
+    optional uint32 uint32_password_redbag_time  = 66;   //最后一条口令红包的时间,用户更新口令红包列表信息
+    optional uint64 uint64_subscription_uin      = 67;//公众号项目订阅号Uin
+    optional uint32 uint32_member_list_change_seq =  68;//群成员表变更SEQ
+    optional uint32 uint32_membercard_seq        = 69;//群的名片seq
+    optional uint64 uint64_root_id               = 70;//TIM群的根节点ID或企点群的主号
+    optional uint64 uint64_parent_id             = 71;//TIM群的父节点ID
+    optional uint32 uint32_team_seq              = 72;//TIM群的变更SEQ
+    optional uint64 uint64_history_msg_begin_time = 73;
+    optional uint64 uint64_invite_no_auth_num_limit = 74;
+    optional uint32 uint32_cmduin_history_msg_seq  = 75; //用户可看的msgseq (给漫游系统使用)
+    optional uint32 uint32_cmduin_join_msg_seq = 76; //用户加群时seq (客户端使用，实际返回的是最大消息SEQ)
+    optional uint32 uint32_group_flagext3 = 77;       //群标记位3,详细说明见下文
+    optional uint32 uint32_group_open_appid = 78;    //群开放业务APPID
+    
+    optional uint32 uint32_is_conf_group = 79;                //是否融合群(初创群); 0=不是; 1=是
+    optional uint32 uint32_is_modify_conf_group_face = 80;    //是否上传了头像;融合群(初创群); 0=没改过; 1=已改过;
+    optional uint32 uint32_is_modify_conf_group_name = 81;    //是否改了群名称;融合群(初创群); 0=没改过; 1=已改过;
+    optional uint32 uint32_no_finger_open_flag = 82;          //群按关键字查找; 0=允许; 1=禁止;
+    optional uint32 uint32_no_code_finger_open_flag = 83;     //群按群号查找; 0=允许; 1=禁止;
+    
+    optional uint32 uint32_auto_agree_join_group_user_num_for_normal_group = 84;//自动同意进群人数:成熟群
+    optional uint32 uint32_auto_agree_join_group_user_num_for_conf_group = 85;//自动同意进群人数:初创群
+    
+    optional uint32 uint32_is_allow_conf_group_member_nick = 86;//初创群是否允许普通成员踢人, 仅初创群有效; 0=不允许; 1=允许
+    optional uint32 uint32_is_allow_conf_group_member_at_all = 87;//初创群是否允许普通成员AtAll, 仅初创群有效; 0=不允许; 1=允许
+    optional uint32 uint32_is_allow_conf_group_member_modify_group_name = 88;//初创群是否允许普通成员改群名片, 仅初创群有效; 0=不允许; 1=允许
+    
+    optional bytes  string_long_group_name = 89; //长群名称,扩展到32个中文,只支持UTF8;手Q---780版本
+	
+	optional uint32 uint32_cmduin_join_real_msg_seq = 90; //用户加群时的消息seq (客户端使用)
+    optional uint32 uint32_is_group_freeze  = 91; //群是否被冻结，被冻结为1，否则为0	
+	optional uint32 uint32_msg_limit_frequency = 92;//消息频率限制字段 0 - 255
+};
+
+message ReqGroupInfo
+{
+    required uint64 uint64_group_code = 1; //欲获取的群号码信息
+    required GroupInfo stgroupinfo    = 2; //欲获取的字段信息
+    optional uint32 uint32_last_get_group_name_time = 3;  //最近一次获取群名称的时间
+};
+
+message ReqBody
+{
+    required uint32 uint32_appid          = 1; //请求方AppID信息
+    repeated ReqGroupInfo stzreqgroupinfo = 2; //请求方欲获取的群信息 
+	optional uint32 uint32_pc_client_version = 3;//客户端版本号
+};
+
+message RspGroupInfo
+{
+    required uint64 uint64_group_code = 1; //欲获取的群号码信息
+    required uint32 uint32_result     = 2; //拉取该群的结果, 0 表示拉取成功, 非零表示失败
+    optional GroupInfo stgroupinfo    = 3; //当resule为0时由此字段
+};
+
+message RspBody
+{
+    repeated RspGroupInfo stzrspgroupinfo = 1; 
+    optional bytes  str_errorinfo         = 2;   //当OIDB包头中的Result不为0时存在信息
+};
+
+message TagRecord
+{
+    optional uint64 uint64_from_uin             = 1;
+    optional uint64 uint64_group_code           = 2;
+    optional bytes  bytes_tag_id                = 3;
+    optional uint64 uint64_set_time             = 4;
+    optional uint32 uint32_good_num             = 5;
+    optional uint32 uint32_bad_num              = 6;
+    optional uint32 uint32_tag_len              = 7;
+    optional bytes  bytes_tag_value             = 8;
+};
+
+message GroupGeoInfo
+{
+    optional uint64 uint64_owneruin = 1;
+    optional uint32 uint32_settime = 2;
+    optional uint32 uint32_cityid = 3;
+    optional int64 int64_longitude = 4;//经度，原值*1000000
+    optional int64 int64_latitude = 5; //纬度，原值*1000000
+    optional bytes  bytes_geocontent = 6; //群地理内容
+    optional uint64 uint64_poi_id = 7;
+};
+
