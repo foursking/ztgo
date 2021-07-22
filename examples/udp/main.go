@@ -2,7 +2,7 @@ package main
 
 import (
 	"net"
-
+	"fmt"
 	core "github.com/foursking/ztgo"
 	"github.com/foursking/ztgo/net/udp"
 
@@ -18,4 +18,6 @@ func main() {
 	if err := srv.Run(); err != nil {
 		panic(err)
 	}
+
+	fmt.Println("aaa")
 }
