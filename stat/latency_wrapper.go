@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"git.code.oa.com/qdgo/core/log"
+	"github.com/foursking/ztgo/log"
 
 	"github.com/micro/go-micro/v2/client"
 )

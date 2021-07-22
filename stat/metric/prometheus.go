@@ -3,8 +3,8 @@ package metric
 import (
 	"net/http"
 
-	"git.code.oa.com/qdgo/core/config/env"
-	"git.code.oa.com/qdgo/core/log"
+	"github.com/foursking/ztgo/config/env"
+	"github.com/foursking/ztgo/log"
 
 	ph "github.com/prometheus/client_golang/prometheus/promhttp"
 )

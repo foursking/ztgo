@@ -3,8 +3,8 @@ package http
 import (
 	"net/http"
 
-	"git.code.oa.com/qdgo/core/config/env"
-	"git.code.oa.com/qdgo/core/log"
+	"github.com/foursking/ztgo/config/env"
+	"github.com/foursking/ztgo/log"
 
 	"github.com/gin-gonic/gin"
 )

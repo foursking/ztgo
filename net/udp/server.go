@@ -5,8 +5,8 @@ import (
 	"net"
 	"time"
 
-	"git.code.oa.com/qdgo/core/addressing"
-	"git.code.oa.com/qdgo/core/log"
+	"github.com/foursking/ztgo/addressing"
+	"github.com/foursking/ztgo/log"
 )
 
 // ServerConfig .

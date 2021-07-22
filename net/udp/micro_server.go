@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"git.code.oa.com/qdgo/core/event"
-	"git.code.oa.com/qdgo/core/log"
+	"github.com/foursking/ztgo/event"
+	"github.com/foursking/ztgo/log"
 
 	"github.com/micro/go-micro/v2/config/cmd"
 	"github.com/micro/go-micro/v2/registry"

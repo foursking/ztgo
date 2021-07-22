@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"git.code.oa.com/qdgo/core/stat/metric"
+	"github.com/foursking/ztgo/stat/metric"
 
 	"github.com/stretchr/testify/assert"
 )

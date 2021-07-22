@@ -3,7 +3,7 @@ package http
 import (
 	"time"
 
-	"git.code.oa.com/qdgo/core/net/util/breaker"
+	"github.com/foursking/ztgo/net/util/breaker"
 )
 
 // ClientOptions is http client options

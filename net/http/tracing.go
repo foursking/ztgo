@@ -4,8 +4,8 @@ import (
 	"context"
 	"net/http"
 
-	"git.code.oa.com/qdgo/core/log"
-	qdmd "git.code.oa.com/qdgo/core/metadata"
+	"github.com/foursking/ztgo/log"
+	qdmd "github.com/foursking/ztgo/metadata"
 
 	"github.com/gin-gonic/gin"
 	"github.com/micro/go-micro/v2/metadata"

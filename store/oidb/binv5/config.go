@@ -1,6 +1,6 @@
 package binv5
 
-import "git.code.oa.com/qdgo/core/net/udp"
+import "github.com/foursking/ztgo/net/udp"
 
 // Config .
 type Config struct {

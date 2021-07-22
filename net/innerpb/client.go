@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"time"
 
-	"git.code.oa.com/qdgo/core/codec/innerpb"
-	"git.code.oa.com/qdgo/core/log"
-	"git.code.oa.com/qdgo/core/metadata"
-	"git.code.oa.com/qdgo/core/net/udp"
+	"github.com/foursking/ztgo/codec/innerpb"
+	"github.com/foursking/ztgo/log"
+	"github.com/foursking/ztgo/metadata"
+	"github.com/foursking/ztgo/net/udp"
 
 	"github.com/davecgh/go-spew/spew"
 	"github.com/opentracing/opentracing-go"

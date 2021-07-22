@@ -6,9 +6,9 @@ import (
 	"net"
 	"time"
 
-	"git.code.oa.com/qdgo/core/addressing"
-	"git.code.oa.com/qdgo/core/log"
-	"git.code.oa.com/qdgo/core/util/backoff"
+	"github.com/foursking/ztgo/addressing"
+	"github.com/foursking/ztgo/log"
+	"github.com/foursking/ztgo/util/backoff"
 )
 
 const (

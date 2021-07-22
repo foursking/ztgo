@@ -6,7 +6,7 @@ import (
 	"os"
 	"runtime"
 
-	"git.code.oa.com/qdgo/core/log"
+	"github.com/foursking/ztgo/log"
 
 	"github.com/gin-gonic/gin"
 )

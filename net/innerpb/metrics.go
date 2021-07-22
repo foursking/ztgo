@@ -1,10 +1,10 @@
 package innerpb
 
-import "git.code.oa.com/qdgo/core/stat/metric"
+import "github.com/foursking/ztgo/stat/metric"
 
 var (
 	_metricClientReqDur = metric.NewHistogramVec(&metric.HistogramVecOpts{
-		Namespace: "qdgo",
+		Namespace: "ztgo",
 		Subsystem: "innerpb",
 		Name:      "client_duration_ms",
 		Help:      "innerpb client requests duration(ms).",
@@ -12,7 +12,7 @@ var (
 		Buckets:   []float64{5, 10, 25, 50, 100, 250, 500, 1000, 2500},
 	})
 	_metricClientReqCodeTotal = metric.NewCounterVec(&metric.CounterVecOpts{
-		Namespace: "qdgo",
+		Namespace: "ztgo",
 		Subsystem: "innerpb",
 		Name:      "client_code_total",
 		Help:      "innerpb client requests code count.",

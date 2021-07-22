@@ -1,12 +1,9 @@
 package redis
 
 import (
-	"context"
-	"crypto/tls"
-	"net"
 	"time"
 
-	"git.code.oa.com/qdgo/core/config/dsn"
+	"github.com/foursking/ztgo/config/dsn"
 
 	"github.com/go-redis/redis/v7"
 )

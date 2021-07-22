@@ -5,7 +5,7 @@ import (
 	"go.uber.org/zap"
 )
 
-// Logger qdgo logger
+// Logger ztgo logger
 type Logger struct {
 	l     *zap.SugaredLogger
 	level zap.AtomicLevel
@@ -74,5 +74,5 @@ func (l *Logger) Logw(level mlog.Level, msg string, kvs ...interface{}) {
 }
 
 func (l *Logger) String() string {
-	return "qdgo logger"
+	return "ztgo logger"
 }

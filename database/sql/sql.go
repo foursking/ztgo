@@ -7,9 +7,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"git.code.oa.com/qdgo/core/errs"
-	"git.code.oa.com/qdgo/core/log"
-	"git.code.oa.com/qdgo/core/net/util/breaker"
+	"github.com/foursking/ztgo/errs"
+	"github.com/foursking/ztgo/log"
+	"github.com/foursking/ztgo/net/util/breaker"
 
 	"github.com/go-sql-driver/mysql"
 	"github.com/opentracing/opentracing-go"

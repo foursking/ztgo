@@ -1,7 +1,7 @@
 package sql
 
 import (
-	"git.code.oa.com/qdgo/core/log"
+	"github.com/foursking/ztgo/log"
 
 	_ "github.com/go-sql-driver/mysql"
 )

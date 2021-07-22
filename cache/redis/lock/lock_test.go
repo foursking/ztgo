@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"git.code.oa.com/qdgo/core/cache/redis"
+	"github.com/foursking/ztgo/cache/redis"
 
 	"github.com/stretchr/testify/assert"
 )

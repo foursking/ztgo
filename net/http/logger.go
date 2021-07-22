@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"git.code.oa.com/qdgo/core/log"
-	"git.code.oa.com/qdgo/core/metadata"
+	"github.com/foursking/ztgo/log"
+	"github.com/foursking/ztgo/metadata"
 
 	"github.com/gin-gonic/gin"
 )

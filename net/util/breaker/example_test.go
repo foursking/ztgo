@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"git.code.oa.com/qdgo/core/net/util/breaker"
+	"github.com/foursking/ztgo/net/util/breaker"
 )
 
 // ExampleGroup show group usage.

@@ -3,7 +3,7 @@ package log
 import (
 	"fmt"
 
-	"git.code.oa.com/qdgo/core/config/env"
+	"github.com/foursking/ztgo/config/env"
 
 	"gopkg.in/natefinch/lumberjack.v2"
 )
@@ -28,7 +28,7 @@ func (f *fileLogger) Sync() error {
 func fileWriter(opt *fileWriterOptions) *fileLogger {
 	logName := env.AppName
 	if logName == "" {
-		logName = "qdgo"
+		logName = "ztgo"
 	}
 	return &fileLogger{Logger: &lumberjack.Logger{
 		Filename:   fmt.Sprintf("%s/%s.log", opt.Dir, logName),

@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"git.code.oa.com/qdgo/core/net/udp"
+	"github.com/foursking/ztgo/net/udp"
 
 	. "github.com/smartystreets/goconvey/convey"
 )

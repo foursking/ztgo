@@ -3,8 +3,8 @@ package http
 import (
 	"net/http"
 
-	"git.code.oa.com/qdgo/core/errs"
-	"git.code.oa.com/qdgo/core/metadata"
+	"github.com/foursking/ztgo/errs"
+	"github.com/foursking/ztgo/metadata"
 
 	"github.com/gin-gonic/gin"
 )
@@ -17,7 +17,7 @@ type Response struct {
 	Data    interface{}       `json:"data"`
 }
 
-// JSON http server 输出统一 json 数据格式（接收 qdgo/errs.Err 类型的 error）
+// JSON http server 输出统一 json 数据格式（接收 ztgo/errs.Err 类型的 error）
 func JSON(ctx *gin.Context, data interface{}, err error) {
 	e := errs.FromError(err)
 	ctx.Set(metadata.ErrCode, e.Code)

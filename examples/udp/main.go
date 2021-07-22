@@ -3,8 +3,8 @@ package main
 import (
 	"net"
 
-	"git.code.oa.com/qdgo/core"
-	"git.code.oa.com/qdgo/core/net/udp"
+	core "github.com/foursking/ztgo"
+	"github.com/foursking/ztgo/net/udp"
 
 	"github.com/micro/go-micro/v2"
 )

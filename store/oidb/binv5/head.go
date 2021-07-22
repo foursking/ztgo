@@ -5,7 +5,7 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"git.code.oa.com/qdgo/core/net/ip"
+	"github.com/foursking/ztgo/net/ip"
 )
 
 const (

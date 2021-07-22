@@ -3,8 +3,8 @@ package sql
 import (
 	"time"
 
-	"git.code.oa.com/qdgo/core/log"
-	"git.code.oa.com/qdgo/core/net/util/breaker"
+	"github.com/foursking/ztgo/log"
+	"github.com/foursking/ztgo/net/util/breaker"
 )
 
 // Options is sql config

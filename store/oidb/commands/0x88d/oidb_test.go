@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"git.code.oa.com/qdgo/core/net/udp"
-	"git.code.oa.com/qdgo/core/store/oidb/pbv2"
+	"github.com/foursking/ztgo/net/udp"
+	"github.com/foursking/ztgo/store/oidb/pbv2"
 
 	"github.com/gogo/protobuf/proto"
 	. "github.com/smartystreets/goconvey/convey"

@@ -4,8 +4,8 @@ import (
 	"io"
 	"sync"
 
-	"git.code.oa.com/qdgo/core/config/env"
-	"git.code.oa.com/qdgo/core/log"
+	"github.com/foursking/ztgo/config/env"
+	"github.com/foursking/ztgo/log"
 
 	"github.com/uber/jaeger-client-go"
 	"github.com/uber/jaeger-client-go/config"

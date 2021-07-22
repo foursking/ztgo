@@ -1,10 +1,10 @@
 package oidb
 
-import "git.code.oa.com/qdgo/core/stat/metric"
+import "github.com/foursking/ztgo/stat/metric"
 
 var (
 	MetricReqDur = metric.NewHistogramVec(&metric.HistogramVecOpts{
-		Namespace: "qdgo",
+		Namespace: "ztgo",
 		Subsystem: "oidb",
 		Name:      "client_duration_ms",
 		Help:      "oidb client requests duration(ms).",
@@ -12,7 +12,7 @@ var (
 		Buckets:   []float64{5, 10, 25, 50, 100, 250, 500, 1000, 2500},
 	})
 	MetricReqErr = metric.NewCounterVec(&metric.CounterVecOpts{
-		Namespace: "qdgo",
+		Namespace: "ztgo",
 		Subsystem: "oidb",
 		Name:      "client_error_total",
 		Help:      "oidb client requests error count.",

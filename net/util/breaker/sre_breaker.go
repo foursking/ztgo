@@ -7,9 +7,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"git.code.oa.com/qdgo/core/errs"
-	"git.code.oa.com/qdgo/core/log"
-	"git.code.oa.com/qdgo/core/stat/metric"
+	"github.com/foursking/ztgo/errs"
+	"github.com/foursking/ztgo/log"
+	"github.com/foursking/ztgo/stat/metric"
 )
 
 // sreBreaker is a sre CircuitBreaker pattern.

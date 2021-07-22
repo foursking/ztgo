@@ -19,8 +19,8 @@ import (
 
 	"github.com/opentracing/opentracing-go/ext"
 
-	"git.code.oa.com/qdgo/core/config/env"
-	"git.code.oa.com/qdgo/core/net/util/breaker"
+	"github.com/foursking/ztgo/config/env"
+	"github.com/foursking/ztgo/net/util/breaker"
 
 	"github.com/gogo/protobuf/proto"
 	pkgerr "github.com/pkg/errors"
@@ -31,7 +31,7 @@ const (
 )
 
 var (
-	_userAgent = "qdgo_http "
+	_userAgent = "ztgo_http "
 )
 
 func init() {

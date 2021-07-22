@@ -5,8 +5,8 @@ import (
 	"os"
 	"sync"
 
-	"git.code.oa.com/qdgo/core/config/env"
-	"git.code.oa.com/qdgo/core/metadata"
+	"github.com/foursking/ztgo/config/env"
+	"github.com/foursking/ztgo/metadata"
 
 	mlog "github.com/micro/go-micro/v2/logger"
 	"go.uber.org/zap"
