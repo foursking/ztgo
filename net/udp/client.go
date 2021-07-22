@@ -49,7 +49,7 @@ func NewClient(c *ClientConfig) (*Client, error) {
 		log.Errorf("udp client addressing addr(%s) error(%v)", c.RemoteAddr, err)
 		return nil, err
 	}
-	defer addr.ReportL5(&err)
+	//defer addr.ReportL5(&err)
 	conn, err := newConn(addr.Addr, c.LocalAddrs...)
 	if err != nil {
 		log.Errorf("udp: NewNetConn(%s,%v) error(%v)", c.RemoteAddr, c.LocalAddrs, err)

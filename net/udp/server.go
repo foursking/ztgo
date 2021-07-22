@@ -46,7 +46,7 @@ func (s *Server) Run() (err error) {
 		log.Errorf("udp server addressing addr(%s) error(%v)", s.c.Addr, err)
 		return
 	}
-	defer a.ReportL5(&err)
+	//defer a.ReportL5(&err)
 	addr, err := net.ResolveUDPAddr("udp", a.Addr)
 	if err != nil {
 		log.Errorf("udp: resolveUDPAddr(%s) error(%v)", a.Addr, err)
